@@ -1,0 +1,13 @@
+{
+  "name": "Skippable",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "爱奇艺跳过广告",
+  "content_scripts": [
+    {
+      "matches": ["https://www.iqiyi.com/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "host_permissions": ["https://www.iqiyi.com/*"]
+}

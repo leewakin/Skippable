@@ -1,12 +1,24 @@
 {
-  "name": "Skippable",
+  "name": "skippable",
   "version": "0.1",
   "manifest_version": 3,
-  "description": "爱奇艺跳过广告",
+  "description": "爱奇艺、优酷跳过广告",
   "content_scripts": [
     {
       "matches": ["https://www.iqiyi.com/*"],
-      "js": ["content-script.js"]
+      "js": ["ai-qi-yi/content-script.js"]
+    },
+    {
+      "matches": ["https://v.youku.com/*"],
+      "run_at": "document_start",
+      "js": ["you-ku/content-script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["you-ku/inject.js"],
+      "matches": ["https://v.youku.com/*"],
+      "use_dynamic_url": false
     }
   ],
   "host_permissions": ["https://www.iqiyi.com/*"]
